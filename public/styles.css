@@ -1,0 +1,77 @@
+
+body {
+  font-family: verdana;
+  margin: 0;
+  }
+
+header {
+  padding: 0.8em;
+  text-align: center;
+  background-color: rgb(46, 125, 50);
+  color: white;
+}
+
+span {
+  font-weight: bold;
+}
+
+header.vc {
+  background-color: rgba(46, 125, 50, 0.8);
+}
+
+hr {
+  color: silver;
+}
+
+#log {
+  position: absolute;
+  top: 4em;
+  right: 2em;
+  bottom: 2em;
+  width: 60%;
+  max-width: 360px;
+  background-color: white;
+  padding: 0.5em;
+  border: 1px solid silver;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+#msg {
+  margin: 0.5em;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 90%;
+  font-size: small;
+  white-space: pre-wrap;
+}
+
+.buttons {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  display: flex;
+  flex-flow: column;
+}
+
+.button {
+  padding: 0.5em;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 4em;
+  text-align: center;
+  margin: 0.5em;
+}
+
+.button:active {
+  background-color: rgba(224,224,224,1.0);
+  color: black;
+}
+
+.button:hover {
+  cursor: pointer;
+}
