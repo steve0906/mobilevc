@@ -3,12 +3,12 @@
   function onButtonClick(event) {
     switch (event.target.id) {
       case 's':
-        postEvent({type: 'enterVC'}, 'navigation');
+        postEvent({msg: 'enterVC'}, 'navigation');
         break;
       // commands to vc: init, connect, disconnect
       case 'i':
         postEvent({
-          type: 'init',
+          msg: 'init',
           apiKey: '45585632',
           sessionId: '2_MX40NTU4NTYzMn5-MTQ2OTQ4MzkzNTQ4MX5XVWwxV3owaEpzNTBRSVZFcVc4QjRTdE9-fg',
           // token good til 8/23, data = {"id": "pr"}
@@ -16,20 +16,22 @@
           // prior token/sessionId
           //token: 'T1==cGFydG5lcl9pZD00NTU4NTYzMiZzaWc9NGI1ZGM0YzllOTA4MTNlYTE0OGYyMTMzYTAxYWVkZWI1OTY0ODNmNzpzZXNzaW9uX2lkPTFfTVg0ME5UVTROVFl6TW41LU1UUTJOalExT1RjMk1USXlNbjV6VDFOb05HVXhXWFJHYlROYVpYQndWbVZDWVdsSllYcC1VSDQmY3JlYXRlX3RpbWU9MTQ2NjQ1OTc5MyZub25jZT0wLjMyMTk1NDkyNzE3NDM3NDQ2JnJvbGU9bW9kZXJhdG9yJmV4cGlyZV90aW1lPTE0NjkwNTE3OTU=',
           //sessionId: '1_MX40NTU4NTYzMn5-MTQ2NjQ1OTc2MTIyMn5zT1NoNGUxWXRGbTNaZXBwVmVCYWlJYXp-UH4'
+          participantId: 'pr',
+          participantDescr: 'Dr Strangelove'
         });
         break;
       case 'c':
-        postEvent({type: 'connect'});
+        postEvent({msg: 'connect'});
         break;
       case 'd':
-        postEvent({type: 'disconnect'});
+        postEvent({msg: 'disconnect'});
         break;
       case 'x':
-        postEvent({type: 'exitVC'}, 'navigation');
+        postEvent({msg: 'exitVC'}, 'navigation');
         // TODO transition back to start page
         break;
       case 'e':
-        postEvent({type: 'echo', desc: 'simulated from mobile_in'}, 'test', 'mobile_in');
+        postEvent({msg: 'echo', desc: 'simulated from mobile_in'}, 'test', 'mobile_in');
         break;
       case 'l':
         document.getElementById('log').className = '';
@@ -46,12 +48,11 @@
   function postEvent(data, uberType, custEvent) {
     if (uberType === undefined) uberType = 'videochat';
     if (custEvent === undefined) custEvent = 'mobile_out';
-    var detail = {
+    var detail = Object.assign({
       type: uberType,
       module: 'pweb',
-      procId: 'bogus-procId',
-      data: data
-    };
+      procId: 'bogus-procId'
+    }, data);
 
     appendToLog(detail, 'TO');
 
