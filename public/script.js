@@ -45,14 +45,12 @@
     }
   }
 
-  function postEvent(data, uberType, custEvent) {
+  function postEvent(detail, uberType, custEvent) {
     if (uberType === undefined) uberType = 'videochat';
     if (custEvent === undefined) custEvent = 'mobile_out';
-    var detail = Object.assign({
-      type: uberType,
-      module: 'pweb',
-      procId: 'bogus-procId'
-    }, data);
+    detail.type = uberType;
+    detail.module = 'pweb';
+    detail.procId = 'bogus-procId';
 
     appendToLog(detail, 'TO');
 
