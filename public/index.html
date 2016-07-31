@@ -9,16 +9,55 @@
 </head>
 
 <body>
-  <header class='vc'> <span> MEDITECH </span> mobileVideo </header>
-  <div class='buttons'>
-    <div class='button' id='s'> start </div>
-    <div class='button' id='i'> init </div>
-    <div class='button' id='c'> cnct </div>
-    <div class='button' id='d'> disc </div>
-    <div class='button' id='x'> exit </div>
-    <div class='button' id='e'> echo </div>
-    <div class='button' id='l'> log </div>
+  <header id='hdr'> <span class='header'> MEDITECH </span> mobileVideo </header>
+
+  <div id='startPg'>
+    <div class='page'>
+      <div class='button' id='b'> back </div>
+      
+      <label>
+        <input type='radio' id='apr' name='mtg' checked='true' />
+        <span class='radio'>Meeting A - Dr Jonathan Prince</span>
+      </label>
+      <label>
+        <input type='radio' id='apt' name='mtg' />
+        <span class='radio'>Meeting A - Pt Stu Solomon</span>
+      </label>
+
+      <label>
+        <input type='radio' id='bpr' name='mtg' />
+        <span class='radio'>Meeting B - Dr Kevin Quinn</span>
+      </label>
+      <label>
+        <input type='radio' id='bpt' name='mtg' />
+        <span class='radio'>Meeting B - Pt John Ritz</span>
+      </label>
+
+      <label>
+        <input type='radio' id='cpr' name='mtg' />
+        <span class='radio'>Meeting C - Dr Russ Merullo</span>
+      </label>
+      <label>
+        <input type='radio' id='cpt' name='mtg' />
+        <span class='radio'>Meeting C - Pt Andres Rivera</span>
+      </label>
+
+      <div class='button' id='l'> log </div>
+      <div class='button' id='s'> start </div>
+    </div>
   </div>
+
+  <div id='vcPg' class='hidden'>
+    <div class='page'>
+      <div class='button' id='i'> init </div>
+      <div class='button' id='c'> cnct </div>
+      <div class='button' id='d'> disc </div>
+      <div class='button' id='e'> echo </div>
+      <div class='button' id='l'> log </div>
+      <div class='button' id='x'> exit </div>
+    </div>
+  </div>
+
   <div id='log' class='hidden'>
     <div id='msg'>beginning of log<br></div>
     <div class='button' id='h'> hide </div>

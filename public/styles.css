@@ -2,6 +2,7 @@
 body {
   font-family: verdana;
   margin: 0;
+  color: #666666;
   }
 
 header {
@@ -11,16 +12,12 @@ header {
   color: white;
 }
 
-span {
-  font-weight: bold;
-}
-
 header.vc {
   background-color: rgba(46, 125, 50, 0.8);
 }
 
-hr {
-  color: silver;
+span.header {
+  font-weight: bold;
 }
 
 #log {
@@ -49,12 +46,35 @@ hr {
   white-space: pre-wrap;
 }
 
-.buttons {
+.page {
   position: absolute;
   left: 5px;
   bottom: 5px;
   display: flex;
   flex-flow: column;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+label {
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 8px;
+}
+
+span.radio {
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+:checked + span.radio {
+  border: 1px solid rgb(46, 125, 50);
+  color: rgb(46, 125, 50);
+  cursor: default;
 }
 
 .button {
